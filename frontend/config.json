@@ -2,7 +2,7 @@
   "app": {
     "title": "LSTM Text Generator",
     "icon": "🧠",
-    "subtitle": "Predict the next word or generate a whole sentence with a PyTorch LSTM.",
+    "subtitle": "Predict the next word or generate a whole sentence ",
     "layout": "centered",
     "footer": "Built with Streamlit · FastAPI · PyTorch"
   },
