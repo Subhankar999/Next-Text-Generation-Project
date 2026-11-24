@@ -49,7 +49,7 @@ lstm-next-word-app/
     ├── requirements.txt
     └── .streamlit/
         ├── config.toml             # base Streamlit theme
-        └── secrets.toml.example    # template for API_URL
+        
 ```
 
 
