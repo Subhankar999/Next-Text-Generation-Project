@@ -19,15 +19,15 @@ BASE_DIR = Path(__file__).resolve().parent
 
 CONFIG_PATH = BASE_DIR / "config.json"
 
+
 @st.cache_data
 def load_config(file_mtime: float) -> dict:
+    """Cached per file-modification time, so editing config.json refreshes the app."""
     with open(CONFIG_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 
+
 CFG = load_config(CONFIG_PATH.stat().st_mtime)
-
-
-CFG = load_config()
 
 DEFAULT_THEME = {
     "primary": "#E8506E",
@@ -294,7 +294,7 @@ predict_word = b1.button(CFG["buttons"]["word"], type="primary")
 generate_sentence = b2.button(CFG["buttons"]["sentence"], type="primary")
 
 if FEATURES["clear_button"]:
-    st.button(" Clear input and result", on_click=clear_all)
+    st.button("🧹 Clear input and result", on_click=clear_all)
 
 
 # ------------------------------ PREDICTION -----------------------------
@@ -448,7 +448,7 @@ if res:
 
 with st.sidebar:
     if FEATURES["theme_switcher"] and len(THEME_NAMES) > 1:
-        st.selectbox(" Theme", THEME_NAMES, key="theme_name")
+        st.selectbox("🎨 Theme", THEME_NAMES, key="theme_name")
 
     if HISTORY.get("enabled") and st.session_state.history:
         st.subheader("🕘 Recent")
