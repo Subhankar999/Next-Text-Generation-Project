@@ -257,6 +257,12 @@ def clear_history():
     st.session_state.history = []
 
 
+def save_history(entry: dict):
+    if HISTORY.get("enabled"):
+        st.session_state.history.insert(0, entry)
+        del st.session_state.history[HISTORY.get("max_items", 5):]
+
+
 # -------------------------------- EXAMPLES -----------------------------
 
 if EXAMPLES:
