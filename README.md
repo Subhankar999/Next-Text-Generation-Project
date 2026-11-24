@@ -36,8 +36,6 @@ A **PyTorch LSTM** does the predicting, a **FastAPI** backend serves it, and a *
 ```
 lstm-next-word-app/
 ├── README.md
-├── render.yaml                     # optional Render blueprint
-├── .gitignore
 ├── backend/
 │   ├── app.py                      # FastAPI app + LSTM inference
 │   ├── lstm_model.pth              # trained weights
