@@ -17,10 +17,14 @@ BASE_DIR = Path(__file__).resolve().parent
 
 # ------------------------------ CONFIG --------------------------------
 
+CONFIG_PATH = BASE_DIR / "config.json"
+
 @st.cache_data
-def load_config() -> dict:
-    with open(BASE_DIR / "config.json", "r", encoding="utf-8") as f:
+def load_config(file_mtime: float) -> dict:
+    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
+
+CFG = load_config(CONFIG_PATH.stat().st_mtime)
 
 
 CFG = load_config()
