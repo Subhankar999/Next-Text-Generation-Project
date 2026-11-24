@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "LSTM Text Generator",
+    "title": "Next Text Generator",
     "icon": "🧠",
     "subtitle": "Predict the next word or generate a whole sentence ",
     "layout": "centered",
