@@ -1,24 +1,22 @@
 {
   "app": {
-    "title": "LSTM Next Word Predictor",
+    "title": "LSTM Text Generator",
     "icon": "🧠",
-    "subtitle": "Predict the next word or generate a whole sentence with a PyTorch LSTM model.",
-    "footer": "Built with PyTorch · FastAPI · Streamlit"
+    "subtitle": "Predict the next word or generate a whole sentence with a PyTorch LSTM.",
+    "layout": "centered",
+    "footer": "Built with Streamlit · FastAPI · PyTorch"
   },
-  "theme": {
-    "primary": "#6C63FF",
-    "accent": "#00D4FF",
-    "card_background": "#181C30",
-    "card_border": "#2A3050",
-    "text_muted": "#9AA3C7",
-    "success": "#2ECC71",
-    "warning": "#F5A623"
-  },
+  "examples": [
+    "happiness is found in",
+    "life is what happens",
+    "the best way to",
+    "success comes from"
+  ],
   "input": {
-    "label": "Starting text",
-    "placeholder": "e.g. the best way to predict the future is to",
+    "label": "Starting sentence",
+    "placeholder": "e.g. happiness is found in",
     "height": 120,
-    "max_chars": 500
+    "max_chars": 300
   },
   "slider": {
     "label": "Number of words to generate",
@@ -28,32 +26,85 @@
     "step": 1
   },
   "buttons": {
-    "word": "🔮 Predict Next Word",
-    "sentence": "✍️ Generate Sentence"
-  },
-  "examples": [
-    "the best way to predict the future is",
-    "life is what happens when",
-    "success is not final failure is not",
-    "the only thing we have to fear is"
-  ],
-  "api": {
-    "word_endpoint": "/word_predict",
-    "sentence_endpoint": "/sentense_predict",
-    "health_endpoint": "/health",
-    "timeout_seconds": 90,
-    "retries": 1
+    "word": " Predict Next Word",
+    "sentence": " Generate Sentence"
   },
   "history": {
     "enabled": true,
     "max_items": 5
   },
+  "api": {
+    "word_endpoint": "/word_predict",
+    "sentence_endpoint": "/sentense_predict",
+    "timeout_seconds": 90,
+    "retries": 1
+  },
   "messages": {
-    "empty_input": "Please enter some text first.",
+    "empty_input": "Please enter a starting sentence first.",
     "loading_word": "Predicting the next word…",
-    "loading_sentence": "Generating your sentence… (the first request may take up to a minute if the server was asleep)",
-    "connection_error": "Could not reach the API server. Check API_URL in your Streamlit secrets and make sure the backend is running.",
-    "timeout_error": "The server took too long to respond. It may be waking up — please try again in a few seconds.",
-    "missing_secret": "API_URL is not configured. Add it to .streamlit/secrets.toml (local) or the app's Secrets settings (cloud)."
+    "loading_sentence": "Generating your sentence… (the first request may take ~1 minute while the server wakes up)",
+    "timeout_error": "The server took too long to respond. It may be waking up – please try again in a moment.",
+    "connection_error": "Cannot reach the backend. Check the API_URL secret and that the server is running.",
+    "no_known_words": "None of those words are in the model's vocabulary. Try different words."
+  },
+  "features": {
+    "clear_button": true,
+    "add_word_button": true,
+    "continue_button": true,
+    "download_button": true,
+    "show_response_time": true,
+    "history_reuse": true,
+    "theme_switcher": true
+  },
+  "default_theme": "Midnight Dark",
+  "themes": {
+    " Sunset Light": {
+      "primary": "#E8506E",
+      "accent": "#E8710A",
+      "bg_start": "#FFF8F0",
+      "bg_end": "#FFEFE3",
+      "card_background": "#FFFFFF",
+      "card_border": "#F6DCCB",
+      "text": "#2D2A32",
+      "text_muted": "#8A7F87",
+      "sidebar_bg": "#FFEFE3",
+      "input_bg": "#FFFFFF"
+    },
+    " Mint Light": {
+      "primary": "#0FA37F",
+      "accent": "#D97706",
+      "bg_start": "#F2FBF7",
+      "bg_end": "#E3F6EC",
+      "card_background": "#FFFFFF",
+      "card_border": "#CDEBDD",
+      "text": "#1F2D28",
+      "text_muted": "#6F8A80",
+      "sidebar_bg": "#E3F6EC",
+      "input_bg": "#FFFFFF"
+    },
+    " Lavender Light": {
+      "primary": "#9B5DE5",
+      "accent": "#E0409A",
+      "bg_start": "#FAF5FF",
+      "bg_end": "#F1E6FD",
+      "card_background": "#FFFFFF",
+      "card_border": "#E5D3F8",
+      "text": "#2B2236",
+      "text_muted": "#8C7FA0",
+      "sidebar_bg": "#F1E6FD",
+      "input_bg": "#FFFFFF"
+    },
+    " Midnight Dark": {
+      "primary": "#FF7AA2",
+      "accent": "#FFB86B",
+      "bg_start": "#14121F",
+      "bg_end": "#1E1B2E",
+      "card_background": "#262338",
+      "card_border": "#3A3656",
+      "text": "#F2F0FA",
+      "text_muted": "#A29FB8",
+      "sidebar_bg": "#1A1829",
+      "input_bg": "#262338"
+    }
   }
 }
